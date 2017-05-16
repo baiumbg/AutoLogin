@@ -92,9 +92,6 @@ namespace AutoLogin
         {
             try
             {
-                // If this fails the email is not valid
-                new MailAddress(txtEmail.Text);
-
                 // Check if password is entered
                 if (txtPassword.Text == "")
                 {
@@ -102,6 +99,17 @@ namespace AutoLogin
                 }
                 else
                 {
+                    // If no email set use name
+                    if (txtEmail.Text == "")
+                    {
+                        txtEmail.Text = txtName.Text;
+                    }
+                    else
+                    {
+                        // If this fails the email is not valid
+                        new MailAddress(txtEmail.Text);
+                    }
+
                     // If no name set use email address
                     if (txtName.Text == "")
                     {

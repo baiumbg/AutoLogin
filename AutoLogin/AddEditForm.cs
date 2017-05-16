@@ -87,7 +87,11 @@ namespace AutoLogin
         private void btnSave_Click(object sender, EventArgs e)
         {
             // Check if password is entered
-            if (txtPassword.Text == "")
+            if (txtLogin.Text == "")
+            {
+                MessageBox.Show("Login required!");
+            }
+            else if (txtPassword.Text == "")
             {
                 MessageBox.Show("Password required!");
             }

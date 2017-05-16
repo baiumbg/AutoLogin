@@ -54,7 +54,7 @@ namespace AutoLogin
                 try
                 {
                     txtName.Text = account.Name;
-                    txtEmail.Text = account.Email;
+                    txtLogin.Text = account.Login;
                     txtPassword.Text = account.Password;
                     chkMultiple.Checked = account.Multiple;
                     if (account.Multiple)
@@ -86,61 +86,43 @@ namespace AutoLogin
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            try
+            // Check if password is entered
+            if (txtPassword.Text == "")
             {
-                // Check if password is entered
-                if (txtPassword.Text == "")
-                {
-                    MessageBox.Show("Password required!");
-                }
-                else
-                {
-                    // If no email set use name
-                    if (txtEmail.Text == "")
-                    {
-                        txtEmail.Text = txtName.Text;
-                    }
-                    else
-                    {
-                        // If this fails the email is not valid
-                        new MailAddress(txtEmail.Text);
-                    }
-
-                    // If no name set use email address
-                    if (txtName.Text == "")
-                    {
-                        txtName.Text = txtEmail.Text;
-                    }
-
-                    // If "adding" create a new account
-                    if (account == null)
-                    {
-                        account = new Account();
-                        account.Client = "32bit";
-                        MainForm.ACCOUNTS.Add(account);
-                    }
-
-                    // Save all account information to account object
-                    account.Name = txtName.Text;
-                    account.Email = txtEmail.Text;
-                    account.Password = txtPassword.Text;
-                    account.Multiple = chkMultiple.Checked;
-                    account.NumberAccounts = chkMultiple.Checked ? (int)numAccounts.Value : 0;
-                    account.AccountNames = new string[lstAccounts.Items.Count];
-                    lstAccounts.Items.CopyTo(account.AccountNames, 0);
-                    account.SelectedAccount = chkMultiple.Checked ? lstAccounts.SelectedIndices[0] : 0;
-                    account.SetRealm = chkRealm.Checked;
-                    account.Realm = drpRealm.Text;
-                    account.SetCharacter = chkCharacter.Checked;
-                    account.CharacterSlot = lstCharacter.SelectedIndex;
-                    account.EnterWorld = chkEnterWorld.Checked;
-                    mForm.refreshList(addEdit);
-                    this.Close();
-                }
+                MessageBox.Show("Password required!");
             }
-            catch (Exception)
+            else
             {
-                MessageBox.Show("Valid email address required!");
+                // If no name set use login
+                if (txtName.Text == "")
+                {
+                    txtName.Text = txtLogin.Text;
+                }
+
+                // If "adding" create a new account
+                if (account == null)
+                {
+                    account = new Account();
+                    account.Client = "32bit";
+                    MainForm.ACCOUNTS.Add(account);
+                }
+
+                // Save all account information to account object
+                account.Name = txtName.Text;
+                account.Login = txtLogin.Text;
+                account.Password = txtPassword.Text;
+                account.Multiple = chkMultiple.Checked;
+                account.NumberAccounts = chkMultiple.Checked ? (int)numAccounts.Value : 0;
+                account.AccountNames = new string[lstAccounts.Items.Count];
+                lstAccounts.Items.CopyTo(account.AccountNames, 0);
+                account.SelectedAccount = chkMultiple.Checked ? lstAccounts.SelectedIndices[0] : 0;
+                account.SetRealm = chkRealm.Checked;
+                account.Realm = drpRealm.Text;
+                account.SetCharacter = chkCharacter.Checked;
+                account.CharacterSlot = lstCharacter.SelectedIndex;
+                account.EnterWorld = chkEnterWorld.Checked;
+                mForm.refreshList(addEdit);
+                this.Close();
             }
         }
 

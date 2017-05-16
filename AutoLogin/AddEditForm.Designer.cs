@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEditForm));
             this.txtName = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtLogin = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -59,12 +59,12 @@
             this.txtName.Size = new System.Drawing.Size(150, 20);
             this.txtName.TabIndex = 0;
             // 
-            // txtEmail
+            // txtLogin
             // 
-            this.txtEmail.Location = new System.Drawing.Point(73, 38);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(150, 20);
-            this.txtEmail.TabIndex = 1;
+            this.txtLogin.Location = new System.Drawing.Point(73, 38);
+            this.txtLogin.Name = "txtLogin";
+            this.txtLogin.Size = new System.Drawing.Size(150, 20);
+            this.txtLogin.TabIndex = 1;
             // 
             // txtPassword
             // 
@@ -88,9 +88,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(33, 41);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.Size = new System.Drawing.Size(33, 13);
             this.label2.TabIndex = 14;
-            this.label2.Text = "Email";
+            this.label2.Text = "Login";
             // 
             // label3
             // 
@@ -108,7 +108,7 @@
             this.chkMultiple.Name = "chkMultiple";
             this.chkMultiple.Size = new System.Drawing.Size(170, 17);
             this.chkMultiple.TabIndex = 3;
-            this.chkMultiple.Text = "Multiple accounts on this email";
+            this.chkMultiple.Text = "Multiple accounts on this login";
             this.chkMultiple.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chkMultiple.UseVisualStyleBackColor = true;
             this.chkMultiple.CheckedChanged += new System.EventHandler(this.chkMultiple_CheckedChanged);
@@ -296,7 +296,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.txtName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.HelpButton = true;
@@ -315,7 +315,7 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

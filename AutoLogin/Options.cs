@@ -38,7 +38,7 @@ namespace AutoLogin
 
             if (SetAccountName)
             {
-                list.Add("SET accountName \"" + account.Email + "\"");
+                list.Add("SET accountName \"" + account.Login + "\"");
             }
 
             if (SetAccountList && account.Multiple)

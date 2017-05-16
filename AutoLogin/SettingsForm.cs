@@ -35,6 +35,7 @@ namespace AutoLogin
             chkUpdate.Checked = MainForm.SETTINGS.AutoUpdate;
             chkMinimize.Checked = MainForm.SETTINGS.Minimize;
             chkHide.Checked = MainForm.SETTINGS.Hide;
+            numEnterWorldDelay.Value = MainForm.SETTINGS.EnterWorldDelay / 1000;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -50,6 +51,7 @@ namespace AutoLogin
                 MainForm.SETTINGS.AutoUpdate = chkUpdate.Checked;
                 MainForm.SETTINGS.Minimize = chkMinimize.Checked;
                 MainForm.SETTINGS.Hide = chkHide.Checked;
+                MainForm.SETTINGS.EnterWorldDelay = (int)numEnterWorldDelay.Value * 1000;
                 mForm.SaveSettings();
                 this.Close();
             }

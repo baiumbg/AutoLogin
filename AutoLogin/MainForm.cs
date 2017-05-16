@@ -555,10 +555,10 @@ namespace AutoLogin
                     // Hit enter to log in
                     PostMessage(process.MainWindowHandle, WM_KEYDOWN, new IntPtr(VK_RETURN), IntPtr.Zero);
 
-                    // Wait 15 seconds and press Enter
+                    // Wait x seconds and press Enter
                     if (account.EnterWorld)
                     {
-                        Thread.Sleep(15000);
+                        Thread.Sleep(SETTINGS.EnterWorldDelay);
                         PostMessage(process.MainWindowHandle, WM_KEYUP, new IntPtr(VK_RETURN), IntPtr.Zero);
                         PostMessage(process.MainWindowHandle, WM_KEYDOWN, new IntPtr(VK_RETURN), IntPtr.Zero);
                     }

@@ -24,6 +24,7 @@ namespace AutoLogin
         public bool AutoUpdate { get; set; }
         public bool Minimize { get; set; }
         public bool Hide { get; set; }
+        public int EnterWorldDelay { get; set; }
 
         public Settings()
         {
@@ -33,6 +34,7 @@ namespace AutoLogin
             AutoUpdate = true;
             Minimize = true;
             Hide = false;
+            EnterWorldDelay = 5000;
         }
     }
 }

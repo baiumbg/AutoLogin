@@ -38,12 +38,16 @@
             this.chkUpdate = new System.Windows.Forms.CheckBox();
             this.chkMinimize = new System.Windows.Forms.CheckBox();
             this.chkHide = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.numEnterWorldDelay = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numEnterWorldDelay)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSave
             // 
             this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnSave.Location = new System.Drawing.Point(12, 83);
+            this.btnSave.Location = new System.Drawing.Point(29, 79);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(97, 23);
             this.btnSave.TabIndex = 6;
@@ -54,7 +58,7 @@
             // btnClose
             // 
             this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnClose.Location = new System.Drawing.Point(115, 83);
+            this.btnClose.Location = new System.Drawing.Point(132, 79);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(97, 23);
             this.btnClose.TabIndex = 7;
@@ -65,7 +69,7 @@
             // btnPassword
             // 
             this.btnPassword.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnPassword.Location = new System.Drawing.Point(218, 83);
+            this.btnPassword.Location = new System.Drawing.Point(235, 79);
             this.btnPassword.Name = "btnPassword";
             this.btnPassword.Size = new System.Drawing.Size(164, 23);
             this.btnPassword.TabIndex = 8;
@@ -103,7 +107,7 @@
             // 
             this.chkUpdate.AutoSize = true;
             this.chkUpdate.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkUpdate.Location = new System.Drawing.Point(121, 38);
+            this.chkUpdate.Location = new System.Drawing.Point(263, 60);
             this.chkUpdate.Name = "chkUpdate";
             this.chkUpdate.Size = new System.Drawing.Size(151, 17);
             this.chkUpdate.TabIndex = 12;
@@ -113,7 +117,7 @@
             // chkMinimize
             // 
             this.chkMinimize.AutoSize = true;
-            this.chkMinimize.Location = new System.Drawing.Point(65, 60);
+            this.chkMinimize.Location = new System.Drawing.Point(11, 60);
             this.chkMinimize.Name = "chkMinimize";
             this.chkMinimize.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.chkMinimize.Size = new System.Drawing.Size(116, 17);
@@ -124,7 +128,7 @@
             // chkHide
             // 
             this.chkHide.AutoSize = true;
-            this.chkHide.Location = new System.Drawing.Point(206, 60);
+            this.chkHide.Location = new System.Drawing.Point(132, 60);
             this.chkHide.Name = "chkHide";
             this.chkHide.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.chkHide.Size = new System.Drawing.Size(125, 17);
@@ -132,12 +136,45 @@
             this.chkHide.Text = "Hide when minimized";
             this.chkHide.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(93, 39);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 13);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Wait";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(176, 39);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(149, 13);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "seconds before entering world";
+            // 
+            // numEnterWorldDelay
+            // 
+            this.numEnterWorldDelay.Location = new System.Drawing.Point(122, 37);
+            this.numEnterWorldDelay.Name = "numEnterWorldDelay";
+            this.numEnterWorldDelay.Size = new System.Drawing.Size(51, 20);
+            this.numEnterWorldDelay.TabIndex = 18;
+            this.numEnterWorldDelay.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 115);
+            this.ClientSize = new System.Drawing.Size(428, 111);
             this.ControlBox = false;
+            this.Controls.Add(this.numEnterWorldDelay);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.chkHide);
             this.Controls.Add(this.chkMinimize);
             this.Controls.Add(this.chkUpdate);
@@ -153,6 +190,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "SettingsForm";
             this.Load += new System.EventHandler(this.SettingsForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numEnterWorldDelay)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,5 +207,8 @@
         private System.Windows.Forms.CheckBox chkUpdate;
         private System.Windows.Forms.CheckBox chkMinimize;
         private System.Windows.Forms.CheckBox chkHide;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown numEnterWorldDelay;
     }
 }

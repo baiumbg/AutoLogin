@@ -77,7 +77,7 @@ namespace AutoLogin
             if (!File.Exists(SETTINGS.WowPath + @"\Wow.exe"))
             {
                 MessageBox.Show("Could not find Wow.exe." + Environment.NewLine + "Please browse to your World of Warcraft folder.");
-                new SettingsForm().ShowDialog(this);
+                new SettingsForm().ShowMe(this);
             }
 
             LoadData();

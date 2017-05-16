@@ -497,14 +497,8 @@ namespace AutoLogin
                             Where(line => !line.Contains("readTOS")).
                             Where(line => !line.Contains("readEULA")).
                             Where(line => !line.Contains("accountName")).
-                            Where(line => !line.Contains("gxWindow")).
-                            Where(line => !line.Contains("hwDetect")).
-                            Where(line => !line.Contains("gxMaximize")).
                             Where(line => !line.Contains("accountList")).
-                            Where(line => !line.Contains("graphicsQuality")).
                             Where(line => !line.Contains(account.SetRealm ? "realmName" : "null")).
-                            Where(line => !line.Contains(account.Windowed ? "gxResolution" : "null")).
-                            Where(line => !line.Contains(account.LowDetail ? "gxApi" : "null")).
                             Where(line => !line.Contains(account.SetCharacter ? "lastCharacterIndex" : "null")).
                             ToList());
                     File.AppendAllLines(SETTINGS.WowPath + @"\WTF\Config.wtf", options.CompiledList());
@@ -550,7 +544,7 @@ namespace AutoLogin
                     } while (process.MainWindowHandle.ToInt32() == 0);
 
                     // Sleep for a little to give the insides time to load
-                    Thread.Sleep(account.Windowed ? 600 : 1500);
+                    Thread.Sleep(1500);
 
                     // Send the password one key at a time
                     for (int i = 0; i < account.Password.Length; i++)

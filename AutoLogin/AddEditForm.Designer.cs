@@ -38,8 +38,6 @@
             this.chkMultiple = new System.Windows.Forms.CheckBox();
             this.numAccounts = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
-            this.chkWindowed = new System.Windows.Forms.CheckBox();
-            this.drpResolution = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
@@ -50,7 +48,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.chkEnterWorld = new System.Windows.Forms.CheckBox();
             this.lstAccounts = new System.Windows.Forms.ListBox();
-            this.chkLowDetail = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numAccounts)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -152,30 +149,6 @@
             this.label5.TabIndex = 16;
             this.label5.Text = "Select position \r\nof account\r\n\r\nDouble click\r\nto rename\r\n\r\nCase Sensitive";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // chkWindowed
-            // 
-            this.chkWindowed.AutoSize = true;
-            this.chkWindowed.Location = new System.Drawing.Point(238, 14);
-            this.chkWindowed.Name = "chkWindowed";
-            this.chkWindowed.Size = new System.Drawing.Size(77, 17);
-            this.chkWindowed.TabIndex = 6;
-            this.chkWindowed.Text = "Windowed";
-            this.chkWindowed.UseVisualStyleBackColor = true;
-            this.chkWindowed.CheckedChanged += new System.EventHandler(this.chkWindowed_CheckedChanged);
-            // 
-            // drpResolution
-            // 
-            this.drpResolution.DropDownHeight = 150;
-            this.drpResolution.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.drpResolution.DropDownWidth = 100;
-            this.drpResolution.Enabled = false;
-            this.drpResolution.FormattingEnabled = true;
-            this.drpResolution.IntegralHeight = false;
-            this.drpResolution.Location = new System.Drawing.Point(316, 12);
-            this.drpResolution.Name = "drpResolution";
-            this.drpResolution.Size = new System.Drawing.Size(68, 21);
-            this.drpResolution.TabIndex = 7;
             // 
             // panel1
             // 
@@ -301,17 +274,6 @@
             this.lstAccounts.TabIndex = 19;
             this.lstAccounts.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lstAccounts_MouseDoubleClick);
             // 
-            // chkLowDetail
-            // 
-            this.chkLowDetail.AutoSize = true;
-            this.chkLowDetail.Enabled = false;
-            this.chkLowDetail.Location = new System.Drawing.Point(391, 14);
-            this.chkLowDetail.Name = "chkLowDetail";
-            this.chkLowDetail.Size = new System.Drawing.Size(76, 17);
-            this.chkLowDetail.TabIndex = 20;
-            this.chkLowDetail.Text = "Low Detail";
-            this.chkLowDetail.UseVisualStyleBackColor = true;
-            // 
             // AddEditForm
             // 
             this.AcceptButton = this.btnSave;
@@ -319,7 +281,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(472, 251);
             this.ControlBox = false;
-            this.Controls.Add(this.chkLowDetail);
             this.Controls.Add(this.lstAccounts);
             this.Controls.Add(this.chkEnterWorld);
             this.Controls.Add(this.label4);
@@ -328,8 +289,6 @@
             this.Controls.Add(this.drpRealm);
             this.Controls.Add(this.chkRealm);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.drpResolution);
-            this.Controls.Add(this.chkWindowed);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.numAccounts);
             this.Controls.Add(this.chkMultiple);
@@ -364,8 +323,6 @@
         private System.Windows.Forms.CheckBox chkMultiple;
         private System.Windows.Forms.NumericUpDown numAccounts;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox chkWindowed;
-        private System.Windows.Forms.ComboBox drpResolution;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClose;
@@ -376,6 +333,5 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox chkEnterWorld;
         public System.Windows.Forms.ListBox lstAccounts;
-        private System.Windows.Forms.CheckBox chkLowDetail;
     }
 }

@@ -47,7 +47,6 @@ namespace AutoLogin
             lstAccounts.SelectedIndex = 0;
             lstCharacter.SelectedIndex = 0;
 
-            drpResolution.DataSource = getRes.list;
             drpRealm.DataSource = Options.GetRealms();
 
             if (account != null)
@@ -75,9 +74,6 @@ namespace AutoLogin
                         }
                         lstAccounts.SelectedIndex = account.SelectedAccount;
                     }
-                    chkWindowed.Checked = account.Windowed;
-                    drpResolution.SelectedItem = account.Resolution;
-                    chkLowDetail.Checked = account.LowDetail;
                     chkRealm.Checked = account.SetRealm;
                     drpRealm.SelectedItem = account.Realm;
                     chkCharacter.Checked = account.SetCharacter;
@@ -133,9 +129,6 @@ namespace AutoLogin
                     account.AccountNames = new string[lstAccounts.Items.Count];
                     lstAccounts.Items.CopyTo(account.AccountNames, 0);
                     account.SelectedAccount = chkMultiple.Checked ? lstAccounts.SelectedIndices[0] : 0;
-                    account.Windowed = chkWindowed.Checked;
-                    account.Resolution = drpResolution.Text;
-                    account.LowDetail = chkLowDetail.Checked;
                     account.SetRealm = chkRealm.Checked;
                     account.Realm = drpRealm.Text;
                     account.SetCharacter = chkCharacter.Checked;
@@ -176,13 +169,6 @@ namespace AutoLogin
             {
                 lstAccounts.Items.RemoveAt(lstAccounts.Items.Count - 1);
             }
-        }
-
-        private void chkWindowed_CheckedChanged(object sender, EventArgs e)
-        {
-            drpResolution.Enabled = chkWindowed.Checked ? true : false;
-            drpResolution.SelectedIndex = 0;
-            chkLowDetail.Enabled = chkWindowed.Checked ? true : false;
         }
 
         private void chkRealm_CheckedChanged(object sender, EventArgs e)

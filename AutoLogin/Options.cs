@@ -34,17 +34,6 @@ namespace AutoLogin
                 list.Add("SET realmName \"" + account.Realm + "\"");
             }
 
-            if (SetResolution && account.Windowed)
-            {
-                list.Add("SET gxWindow \"1\"");
-                list.Add("SET gxMaximize \"0\"");
-                list.Add("SET gxResolution \"" + account.Resolution.Replace(" ", string.Empty) + "\"");
-            }
-            else
-            {
-                list.Add("SET gxWindow \"0\"");
-            }
-
             if (SetAccountName)
             {
                 list.Add("SET accountName \"" + account.Email + "\"");
@@ -67,17 +56,6 @@ namespace AutoLogin
                     i++;
                 }
                 list.Add("SET accountList \"" + accountList + "\"");
-            }
-
-            if (SetGraphicsQuality && account.LowDetail)
-            {
-                list.Add("SET hwDetect \"0\"");
-                list.Add("SET graphicsQuality \"0\"");
-                list.Add("SET gxApi \"D3D9\"");
-            }
-            else
-            {
-                list.Add("SET hwDetect \"1\"");
             }
 
             if (SetLastCharacterIndex && account.SetCharacter)
